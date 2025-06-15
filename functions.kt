@@ -7,6 +7,8 @@ fun main() {
     val num2 = 20
     println("The maximum of $num1 and $num2 is: ${findMax(num1, num2)}")
     println("The maximum of $num1 and $num2 is: ${maxOf(num1, num2)}") // built in maxOf
+
+    theVarArg(1,5,6,4,8,2)
 }
 
 fun timesThree(a: Int): Unit {
@@ -29,4 +31,12 @@ fun aFunction(a: Int, b: Int) {
 
 fun findMax(a: Int, b: Int): Int {
     return if (a > b) a else b
+}
+
+//vararg to take parameter in form of array(for undefined length)
+
+fun theVarArg(vararg numbers: Int) {
+    numbers.forEach { 
+        print("$it, ")
+     }
 }
