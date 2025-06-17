@@ -16,6 +16,16 @@ fun main () {
     val account = BankAccount("Aarav", 75000.0)
     account.deposit(10000.0)
     account.withdraw(30000.0)
+
+    // Using primary constructor
+    val person1 = Person("Alice", 25)
+    person1.showDetails()
+
+    println("-----------")
+
+    // Using secondary constructor
+    val person2 = Person("Bob", 30, "bob@example.com")
+    person2.showDetails()
 }
 
 
@@ -88,5 +98,27 @@ class Bike {
         this.model = model
         this.color = color
         this.price = price
+    }
+}
+
+// both used together
+
+class Person(val name: String, val age: Int) { // Primary constructor
+
+    var email: String = "Not Provided"
+
+    // Initializer block (optional, runs after primary constructor)
+    init {
+        println("Primary constructor called: Name = $name, Age = $age")
+    }
+
+    // Secondary constructor
+    constructor(name: String, age: Int, email: String) : this(name, age) {
+        this.email = email
+        println("Secondary constructor called: Email = $email")
+    }
+
+    fun showDetails() {
+        println("Name: $name, Age: $age, Email: $email")
     }
 }
