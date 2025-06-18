@@ -17,9 +17,9 @@ class User private constructor(val name: String, val age: Int) {
 
 fun main() {
     val user = User.createFromCSV("Alice, 30")
-    user.showInfo() 
-    
-     // Accessing the singleton directly
+    user.showInfo()
+
+    // Accessing the singleton directly
     AppConfig.printConfig()
 
     // Modifying a property
@@ -29,7 +29,6 @@ fun main() {
     AppConfig.printConfig()
 }
 
-
 object AppConfig {
     val appName = "MyApp"
     var maxUsers = 100
@@ -38,4 +37,3 @@ object AppConfig {
         println("App Name: $appName, Max Users: $maxUsers")
     }
 }
-
